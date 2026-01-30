@@ -1,0 +1,91 @@
+{
+  "projects": [
+    {
+      "category": "AI/ML Projects",
+      "title": "Azure AI Document Processor",
+      "short_description": "Enterprise-grade document processing pipeline using Azure AI Services, Form Recognizer, and Cognitive Search for intelligent extraction.",
+      
+      "metrics": [
+        {
+          "label": "Documents/Day",
+          "value": "10K+"
+        },
+        {
+          "label": "Accuracy",
+          "value": "97%"
+        }
+      ],
+
+      "tech_stack": [
+        "Azure AI",
+        "Form Recognizer",
+        "Cognitive Search",
+        "Python"
+      ],
+
+      "links": {
+        "github": "https://github.com/yourrepo",
+        "demo": "https://yourdemo.com"
+      }
+    },
+        {
+      "category": "Azure Cloud Projects",
+      "title": "Azure AI Document Processor",
+      "short_description": "Enterprise-grade document processing pipeline using Azure AI Services, Form Recognizer, and Cognitive Search for intelligent extraction.",
+      
+      "metrics": [
+        {
+          "label": "Documents/Day",
+          "value": "10K+"
+        },
+        {
+          "label": "Accuracy",
+          "value": "97%"
+        }
+      ],
+
+      "tech_stack": [
+        "Azure AI",
+        "Form Recognizer",
+        "Cognitive Search",
+        "Python"
+      ],
+
+      "links": {
+        "github": "https://github.com/yourrepo",
+        "demo": "https://yourdemo.com"
+      }
+    },
+
+    {
+      "category": "Full Stack Projects",
+      "title": "Azure AI Document Processor",
+      "short_description": "Enterprise-grade document processing pipeline using Azure AI Services, Form Recognizer, and Cognitive Search for intelligent extraction.",
+      
+      "metrics": [
+        {
+          "label": "Documents/Day",
+          "value": "10K+"
+        },
+        {
+          "label": "Accuracy",
+          "value": "97%"
+        }
+      ],
+
+      "tech_stack": [
+        "Azure AI",
+        "Form Recognizer",
+        "Cognitive Search",
+        "Python"
+      ],
+
+      "links": {
+        "github": "https://github.com/yourrepo",
+        "demo": "https://yourdemo.com"
+      }
+    }
+
+
+  ]
+}
