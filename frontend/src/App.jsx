@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Timeline from './components/Timeline';
@@ -76,7 +77,20 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased transition-colors duration-300">
+    <>
+      <Helmet>
+        <title>Aditya Kumar | Python Developer • Data Science & AI Engineer</title>
+        <meta
+          name="description"
+          content="Aditya Kumar — Python Developer, Data Science and AI Engineer. Projects in FastAPI, Automation, Web Scraping, React.js and Cloud."
+        />
+        <link rel="canonical" href="https://www.ankus.dev/" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Aditya Kumar Portfolio" />
+        <meta property="og:url" content="https://www.ankus.dev/" />
+      </Helmet>
+
+      <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased transition-colors duration-300">
       <Navigation
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
@@ -100,6 +114,7 @@ function App() {
         />
       )}
     </div>
+    </>
   );
 }
 
