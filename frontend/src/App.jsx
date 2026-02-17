@@ -48,7 +48,7 @@ function App() {
     
     // Handle external blog link
     if (pageName === 'blogs') {
-      window.open('https://blog.ankus.dev', '_blank');
+      window.open('https://aditya-kr86.medium.com/', '_blank');
       return;
     }
     
@@ -72,21 +72,21 @@ function App() {
       case 'contact':
         return <Contact formStatus={formStatus} setFormStatus={setFormStatus} />;
       default:
-        return <Hero setCurrentPage={setCurrentPage} setComingSoon={setComingSoon} />;
+        return <Hero setCurrentPage={setCurrentPage} />;
     }
   };
 
   return (
     <>
       <Helmet>
-        <title>Aditya Kumar | Python Developer • Data Science & AI Engineer</title>
+        <title>Aditya Kumar | ML Engineer • Python & AI Developer</title>
         <meta
           name="description"
-          content="Aditya Kumar — Python Developer, Data Science and AI Engineer. Projects in FastAPI, Automation, Web Scraping, React.js and Cloud."
+          content="Aditya Kumar — ML Engineer building production-grade AI systems, predictive maintenance, security ML, and automation tools."
         />
         <link rel="canonical" href="https://www.ankus.dev/" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Aditya Kumar Portfolio" />
+        <meta property="og:title" content="Aditya Kumar | Project Showcase" />
         <meta property="og:url" content="https://www.ankus.dev/" />
       </Helmet>
 
