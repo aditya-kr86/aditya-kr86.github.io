@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
+import Home from './components/Home';
 import Timeline from './components/Timeline';
 import Links from './components/Links';
 import Contact from './components/Contact';
@@ -72,7 +72,7 @@ function App() {
       case 'contact':
         return <Contact formStatus={formStatus} setFormStatus={setFormStatus} />;
       default:
-        return <Hero setCurrentPage={setCurrentPage} />;
+        return <Home />;
     }
   };
 
@@ -91,22 +91,28 @@ function App() {
       </Helmet>
 
       <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased transition-colors duration-300">
-      <Navigation
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-        navItems={navItems}
-        onNavClick={handleNavClick}
-        comingSoonPages={comingSoonPages}
-        isDarkMode={isDarkMode}
-        toggleDarkMode={toggleDarkMode}
-      />
-      
-      {renderPage()}
-      
-      <Footer />
-      
+      {currentPage === 'home' ? (
+        renderPage()
+      ) : (
+        <>
+          <Navigation
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+            navItems={navItems}
+            onNavClick={handleNavClick}
+            comingSoonPages={comingSoonPages}
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
+
+          {renderPage()}
+
+          <Footer />
+        </>
+      )}
+
       {comingSoon && (
         <ComingSoon 
           title={comingSoon} 
