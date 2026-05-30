@@ -1,54 +1,1157 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Kumar — Data & AI Platform Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    <!-- ✅ Canonical -->
-    <link rel="canonical" href="https://ankus.dev/" />
+:root{
+  --red:#FF3621;--red-dim:rgba(255,54,33,0.12);--red-hover:rgba(255,54,33,0.2);
+  --blue:#60A5FA;--blue-dim:rgba(96,165,250,0.1);
+  --green:#34D399;--green-dim:rgba(52,211,153,0.1);
+  --font-mono:'JetBrains Mono',monospace;
+  --font-sans:'DM Sans',sans-serif;
+  --transition:0.25s ease;
+}
 
-    <!-- ✅ Title -->
-    <title>Aditya Kumar | Python Developer • Data Science & AI Engineer</title>
+[data-theme="dark"]{
+  --bg:#0B0F19;--surface:#111827;--surface2:#1a2235;--surface3:#0d1422;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--border3:rgba(255,255,255,0.04);
+  --text:#F3F4F6;--muted:#9CA3AF;--faint:#4B5563;--faintest:#2d3748;
+  --nav-bg:rgba(11,15,25,0.9);--card-bg:#111827;
+  --toggle-bg:#1a2235;--toggle-border:rgba(255,255,255,0.13);
+  --node-default-stroke:rgba(255,255,255,0.14);
+  --node-default-fill:rgba(255,255,255,0.04);
+  --node-default-text:#9CA3AF;
+}
 
-    <!-- ✅ Meta Description -->
-    <meta
-      name="description"
-      content="Aditya Kumar — Python Developer, Data Science and AI Engineer. Projects in FastAPI, Automation, Web Scraping, React.js and Cloud."
-    />
+[data-theme="light"]{
+  --bg:#FAFAFA;--surface:#FFFFFF;--surface2:#F1F5F9;--surface3:#F8FAFC;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.16);--border3:rgba(0,0,0,0.04);
+  --text:#111111;--muted:#64748B;--faint:#94A3B8;--faintest:#E2E8F0;
+  --nav-bg:rgba(250,250,250,0.92);--card-bg:#FFFFFF;
+  --toggle-bg:#F1F5F9;--toggle-border:rgba(0,0,0,0.12);
+  --red:#D42D1E;--red-dim:rgba(212,45,30,0.08);--red-hover:rgba(212,45,30,0.14);
+  --blue:#1D6FCA;--blue-dim:rgba(29,111,202,0.08);
+  --green:#0F7B57;--green-dim:rgba(15,123,87,0.08);
+  --node-default-stroke:rgba(0,0,0,0.18);
+  --node-default-fill:rgba(0,0,0,0.03);
+  --node-default-text:#475569;
+}
 
-    <!-- ✅ Robots -->
-    <meta name="robots" content="index, follow" />
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-sans);font-size:16px;line-height:1.6;
+  overflow-x:hidden;transition:background var(--transition),color var(--transition);
+}
 
-    <!-- ✅ Open Graph -->
-    <meta property="og:title" content="Aditya Kumar | Python Developer Portfolio" />
-    <meta
-      property="og:description"
-      content="Python, Data Science, AI, FastAPI, Automation, React and Cloud Projects"
-    />
-    <meta property="og:url" content="https://ankus.dev/" />
-    <meta property="og:type" content="website" />
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,4vw,40px);height:56px;
+  background:var(--nav-bg);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:background var(--transition);
+}
+.nav-logo{font-family:var(--font-mono);font-size:13px;color:var(--red);letter-spacing:.05em}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-links{display:flex;gap:24px}
+.nav-links a{
+  font-size:12px;color:var(--muted);text-decoration:none;
+  font-family:var(--font-mono);letter-spacing:.03em;transition:color .2s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-hamburger{display:none;background:none;border:none;color:var(--muted);cursor:pointer;font-size:22px;padding:4px}
 
-    <!-- ✅ Structured Data (Google Identity) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Aditya Kumar",
-      "url": "https://www.ankus.dev/",
-      "sameAs": [
-        "https://github.com/aditya-kr86",
-        "https://www.linkedin.com/in/aditya-kr86",
-        "https://aditya-kr86.medium.com/",
-        "https://instagram.com/aditya.kr86"
-      ],
-      "jobTitle": "Python Developer & AI Engineer"
-    }
-    </script>
-    <script type="module" crossorigin src="/assets/index-BJ6dGT6i.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B_6Suaam.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+/* ── THEME TOGGLE ── */
+.theme-toggle{
+  display:flex;align-items:center;gap:8px;
+  background:var(--toggle-bg);border:1px solid var(--toggle-border);
+  border-radius:100px;padding:5px 10px;cursor:pointer;transition:all .25s;
+}
+.theme-toggle:hover{border-color:var(--red)}
+.toggle-track{
+  width:32px;height:18px;background:var(--faint);border-radius:100px;
+  position:relative;transition:background .25s;
+}
+[data-theme="dark"] .toggle-track{background:var(--red)}
+.toggle-thumb{
+  position:absolute;top:2px;left:2px;width:14px;height:14px;
+  background:#fff;border-radius:50%;transition:transform .25s;
+}
+[data-theme="dark"] .toggle-thumb{transform:translateX(14px)}
+.toggle-icon{font-size:13px;color:var(--muted);transition:color .2s}
+[data-theme="dark"] .toggle-icon.sun{color:var(--faint)}
+[data-theme="dark"] .toggle-icon.moon{color:var(--text)}
+[data-theme="light"] .toggle-icon.sun{color:var(--text)}
+[data-theme="light"] .toggle-icon.moon{color:var(--faint)}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  position:fixed;top:56px;left:0;right:0;z-index:190;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:16px 24px;display:none;flex-direction:column;gap:4px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  font-family:var(--font-mono);font-size:13px;color:var(--muted);
+  text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border3);transition:color .2s;
+}
+.mobile-menu a:hover{color:var(--red)}
+
+/* ── LAYOUT ── */
+.page{max-width:1100px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:clamp(30px,5vw,60px);
+  padding-top:72px;padding-bottom:40px;
+}
+.hero-text{order:1}
+.hero-diagram-wrap{order:2}
+
+.hero-label{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;
+  color:var(--red);text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-label::before{content:'';display:block;width:20px;height:1px;background:var(--red)}
+.hero-name{
+  font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.05;
+  letter-spacing:-.02em;margin-bottom:12px;
+}
+.hero-title{
+  color:var(--red);margin-bottom:20px;
+  font-family:var(--font-mono);font-size:clamp(11px,1.5vw,14px);
+}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:420px;margin-bottom:36px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;
+  padding:9px 18px;border-radius:6px;cursor:pointer;
+  text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;
+  border:1px solid transparent;white-space:nowrap;
+}
+.btn-primary{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-primary:hover{opacity:.88}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--border2)}
+.btn-outline:hover{border-color:var(--red);color:var(--red)}
+
+/* ── ARCH DIAGRAM ── */
+.arch-diagram{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:clamp(16px,3vw,24px);
+  position:relative;overflow:hidden;
+  transition:background var(--transition),border-color var(--transition);
+}
+[data-theme="light"] .arch-diagram{box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.arch-diagram::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 20%,rgba(255,54,33,0.05) 0%,transparent 60%);
+  pointer-events:none;
+}
+.arch-top{
+  font-family:var(--font-mono);font-size:10px;color:var(--faint);
+  margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;
+}
+.arch-dots{display:flex;gap:5px}
+.arch-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.arch-dot.r{background:#FF5F57}.arch-dot.y{background:#FFBD2E}.arch-dot.g{background:#28CA41}
+
+/* SVG flow */
+.flow-canvas{width:100%;display:block}
+.flow-node{cursor:pointer}
+.flow-node rect{transition:stroke .2s,fill .2s,stroke-width .2s}
+.flow-node:hover rect{stroke-width:1.5 !important}
+
+@keyframes dash-flow{to{stroke-dashoffset:-20}}
+.flow-line{stroke-dasharray:5 4;animation:dash-flow 1.8s linear infinite}
+
+/* Tooltip */
+.flow-tooltip{
+  display:none;background:var(--surface2);
+  border:1px solid rgba(255,54,33,0.35);border-radius:10px;
+  padding:14px 16px;margin-top:12px;
+}
+.flow-tooltip.visible{display:block}
+.tip-title{
+  font-family:var(--font-mono);font-size:10px;color:var(--red);
+  letter-spacing:.12em;margin-bottom:8px;text-transform:uppercase;
+}
+.tip-techs{display:flex;flex-wrap:wrap;gap:6px}
+.tip-tech{
+  font-family:var(--font-mono);font-size:11px;
+  background:var(--red-dim);color:var(--red);
+  border:1px solid rgba(255,54,33,0.2);
+  padding:3px 10px;border-radius:4px;
+}
+.tip-hint{font-family:var(--font-mono);font-size:10px;color:var(--faint);margin-top:8px}
+
+/* ── TRUST BAR ── */
+.trust{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:24px 0;overflow:hidden;position:relative;
+}
+.trust::before,.trust::after{
+  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;
+}
+.trust::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.trust::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.trust-track{
+  display:flex;gap:10px;align-items:center;
+  animation:scroll-track 30s linear infinite;width:-moz-max-content;width:max-content;
+}
+.trust-track:hover{animation-play-state:paused}
+@keyframes scroll-track{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.trust-pill{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+  color:var(--faint);border:1px solid var(--border);
+  padding:6px 14px;border-radius:100px;white-space:nowrap;transition:all .2s;
+}
+.trust-pill:hover{color:var(--text);border-color:var(--border2)}
+
+/* ── SECTIONS ── */
+section{padding:clamp(60px,8vw,100px) 0}
+.section-label{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;
+  color:var(--red);text-transform:uppercase;margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.section-label::before{content:'';display:block;width:20px;height:1px;background:var(--red)}
+.section-title{
+  font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-.02em;
+  line-height:1.1;margin-bottom:40px;
+}
+.section-title span{color:var(--red)}
+
+/* ── BUILD CARDS ── */
+.build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.build-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:14px;padding:clamp(20px,3vw,32px) clamp(18px,3vw,28px);
+  transition:border-color .3s,transform .3s;position:relative;overflow:hidden;
+}
+.build-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  transform:scaleX(0);transition:transform .35s;
+}
+.build-card:hover{border-color:rgba(255,54,33,0.28);transform:translateY(-3px)}
+[data-theme="light"] .build-card:hover{box-shadow:0 8px 32px rgba(212,45,30,0.07)}
+.build-card:hover::before{transform:scaleX(1)}
+.build-card-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--red-dim);display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;color:var(--red);font-size:20px;
+}
+.build-card h3{font-size:17px;font-weight:600;margin-bottom:10px}
+.build-card p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.build-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tag{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;
+  color:var(--muted);background:var(--surface2);
+  border:1px solid var(--border);padding:3px 9px;border-radius:4px;
+}
+.arch-flow{
+  font-family:var(--font-mono);font-size:11px;color:var(--faint);
+  border-top:1px solid var(--border);padding-top:14px;line-height:2;
+}
+.arch-flow .step{color:var(--muted);display:flex;align-items:center;gap:5px}
+.arch-flow .arrow{color:var(--red);font-size:10px}
+
+/* ── ARCHITECTURE CARDS ── */
+.arch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.arch-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:14px;padding:clamp(20px,3vw,28px);
+  transition:border-color .3s,transform .3s;
+  position:relative;overflow:hidden;
+}
+[data-theme="light"] .arch-card{box-shadow:0 1px 8px rgba(0,0,0,0.04)}
+.arch-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .35s;
+}
+.arch-card:hover{border-color:rgba(255,54,33,0.25);transform:translateY(-2px)}
+[data-theme="light"] .arch-card:hover{box-shadow:0 6px 24px rgba(212,45,30,0.07)}
+.arch-card:hover::before{transform:scaleY(1)}
+.arch-card-header{margin-bottom:20px}
+.arch-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;gap:10px}
+.arch-card h3{font-size:15px;font-weight:600}
+.arch-badge{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;
+  color:var(--red);background:var(--red-dim);
+  padding:3px 8px;border-radius:4px;text-transform:uppercase;
+  border:1px solid rgba(255,54,33,0.2);white-space:nowrap;flex-shrink:0;
+}
+.arch-badge.streaming{color:var(--blue);background:var(--blue-dim);border-color:rgba(96,165,250,0.2)}
+.arch-badge.aiml{color:var(--green);background:var(--green-dim);border-color:rgba(52,211,153,0.2)}
+.arch-badge.etl{color:#8B5CF6;background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.2)}
+[data-theme="light"] .arch-badge.etl{color:#6D28D9}
+.arch-subtitle{font-family:var(--font-mono);font-size:10px;color:var(--faint);letter-spacing:.06em}
+
+/* Pipeline */
+.pipeline{display:flex;flex-direction:column;gap:0}
+.pipe-row{display:flex;align-items:stretch;gap:10px}
+.pipe-left{display:flex;flex-direction:column;align-items:center;width:28px;flex-shrink:0}
+
+/* Step number circle — replaces emoji */
+.pipe-num{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:10px;font-weight:500;
+  border:1px solid var(--border2);background:var(--surface2);
+  color:var(--muted);flex-shrink:0;letter-spacing:0;
+}
+/* Tier-specific step circles */
+.pipe-num.bronze{background:rgba(234,140,43,0.12);border-color:rgba(234,140,43,0.35);color:#B26A14}
+[data-theme="dark"] .pipe-num.bronze{color:#EA8C2B}
+.pipe-num.silver{background:rgba(148,163,184,0.1);border-color:rgba(148,163,184,0.3);color:#64748B}
+[data-theme="dark"] .pipe-num.silver{color:#94A3B8}
+.pipe-num.gold{background:rgba(250,204,21,0.1);border-color:rgba(250,204,21,0.3);color:#A16207}
+[data-theme="dark"] .pipe-num.gold{color:#FBBF24}
+
+.pipe-connector{width:1px;flex:1;background:var(--border2);margin:0 auto;min-height:8px}
+.pipe-connector.live{background:linear-gradient(to bottom,var(--red),transparent);animation:connector-pulse 1.8s ease-in-out infinite}
+@keyframes connector-pulse{0%,100%{opacity:.35}50%{opacity:.85}}
+
+.pipe-content{flex:1;padding-bottom:8px}
+.pipe-main{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:8px;padding:7px 12px;transition:border-color .2s;
+}
+.arch-card:hover .pipe-main{border-color:var(--border2)}
+.pipe-name{font-family:var(--font-mono);font-size:11px;color:var(--text);letter-spacing:.02em}
+.pipe-tech-badge{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.05em;
+  padding:2px 7px;border-radius:4px;white-space:nowrap;font-weight:500;
+}
+/* Tech badge colours — consistent per technology */
+.ptb-delta{color:#B26A14;background:rgba(234,140,43,0.1);border:1px solid rgba(234,140,43,0.2)}
+[data-theme="dark"] .ptb-delta{color:#EA8C2B}
+.ptb-spark{color:#B04A15;background:rgba(226,90,28,0.1);border:1px solid rgba(226,90,28,0.2)}
+[data-theme="dark"] .ptb-spark{color:#F97316}
+.ptb-sql{color:var(--blue);background:var(--blue-dim);border:1px solid rgba(96,165,250,0.2)}
+.ptb-kafka{color:#0D7A79;background:rgba(13,122,121,0.1);border:1px solid rgba(13,122,121,0.2)}
+[data-theme="dark"] .ptb-kafka{color:#60CFCE}
+.ptb-databricks{color:var(--red);background:var(--red-dim);border:1px solid rgba(255,54,33,0.2)}
+.ptb-bi{color:#6D28D9;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2)}
+[data-theme="dark"] .ptb-bi{color:#A78BFA}
+.ptb-mlflow{color:var(--blue);background:var(--blue-dim);border:1px solid rgba(96,165,250,0.2)}
+.ptb-rest{color:var(--green);background:var(--green-dim);border:1px solid rgba(52,211,153,0.2)}
+.ptb-airflow{color:#0369A1;background:rgba(3,105,161,0.08);border:1px solid rgba(3,105,161,0.2)}
+[data-theme="dark"] .ptb-airflow{color:#38BDF8}
+.ptb-deltalake{color:#B26A14;background:rgba(234,140,43,0.1);border:1px solid rgba(234,140,43,0.2)}
+[data-theme="dark"] .ptb-deltalake{color:#EA8C2B}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;max-width:640px;margin:0 auto}
+.timeline-track{
+  position:absolute;left:20px;top:10px;bottom:10px;width:1px;
+  background:linear-gradient(to bottom,var(--red),var(--blue),rgba(255,54,33,0.15));
+}
+.timeline-item{display:flex;gap:28px;margin-bottom:44px;position:relative;padding-left:52px}
+.timeline-dot{
+  position:absolute;left:14px;top:5px;
+  width:13px;height:13px;border-radius:50%;border:2px solid var(--bg);
+}
+.timeline-dot.active{background:var(--red);box-shadow:0 0 14px rgba(255,54,33,.45)}
+.timeline-dot.done{background:var(--blue)}
+.timeline-dot.future{background:var(--faint)}
+.timeline-year{font-family:var(--font-mono);font-size:11px;color:var(--red);margin-bottom:4px;letter-spacing:.05em}
+.timeline-heading{font-size:17px;font-weight:600;margin-bottom:6px}
+.timeline-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ── NOTES ── */
+.notes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.note-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:10px;padding:18px 20px;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:border-color .25s,transform .25s;cursor:pointer;
+}
+.note-card:hover{border-color:rgba(255,54,33,0.25);transform:translateX(4px)}
+.note-icon{color:var(--red);font-size:18px;margin-top:1px;flex-shrink:0}
+.note-title{font-size:14px;font-weight:500;margin-bottom:4px}
+.note-meta{font-family:var(--font-mono);font-size:10px;color:var(--faint)}
+
+/* ── FOCUS ── */
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.focus-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:14px;padding:clamp(20px,3vw,28px);
+  transition:background var(--transition),border-color var(--transition);
+}
+.focus-label{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.focus-dot{width:6px;height:6px;border-radius:50%}
+.focus-dot.r{background:var(--red)}.focus-dot.b{background:var(--blue)}.focus-dot.g{background:var(--green)}
+.focus-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;border-bottom:1px solid var(--border3);
+  font-family:var(--font-mono);font-size:12px;color:var(--muted);
+}
+.focus-item:last-child{border-bottom:none}
+.focus-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--faint);flex-shrink:0}
+
+/* ── VISION ── */
+.vision-box{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:16px;padding:clamp(28px,5vw,48px) clamp(24px,5vw,52px);
+  position:relative;overflow:hidden;max-width:760px;margin:0 auto;
+  transition:background var(--transition),border-color var(--transition);
+}
+[data-theme="light"] .vision-box{box-shadow:0 2px 24px rgba(0,0,0,0.05)}
+.vision-box::before{
+  content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,54,33,0.06) 0%,transparent 70%);
+}
+.vision-quote{font-family:var(--font-mono);font-size:11px;color:var(--red);margin-bottom:20px;letter-spacing:.06em}
+.vision-text{font-size:17px;line-height:1.8;color:var(--text);font-weight:300;letter-spacing:-.005em}
+.vision-text strong{color:var(--red);font-weight:500}
+
+/* ── OPEN TO ── */
+.open-to-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.open-list{display:flex;flex-direction:column;gap:10px}
+.open-item{
+  display:flex;align-items:center;gap:12px;
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:10px;padding:14px 18px;
+  transition:border-color .25s,transform .2s;
+  font-size:14px;color:var(--text);
+}
+.open-item:hover{border-color:rgba(255,54,33,0.3);transform:translateX(4px)}
+.open-icon{color:var(--red);font-size:16px;flex-shrink:0}
+.connect-box{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:14px;padding:28px;
+  transition:background var(--transition),border-color var(--transition);
+}
+[data-theme="light"] .connect-box{box-shadow:0 2px 16px rgba(0,0,0,0.05)}
+.connect-title{font-size:20px;font-weight:600;margin-bottom:6px}
+.connect-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.connect-links{display:flex;flex-direction:column;gap:10px}
+.connect-link{
+  display:flex;align-items:center;gap:12px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:9px;padding:12px 16px;text-decoration:none;color:var(--text);
+  transition:border-color .2s,transform .2s;font-size:14px;
+}
+.connect-link:hover{border-color:rgba(255,54,33,0.3);transform:translateX(4px)}
+.connect-link-icon{
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+}
+.link-li{background:rgba(29,111,202,0.12);color:#1D6FCA}
+[data-theme="dark"] .link-li{background:rgba(96,165,250,0.12);color:var(--blue)}
+.link-gh{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.link-em{background:var(--red-dim);color:var(--red)}
+.connect-link-info{display:flex;flex-direction:column;gap:2px;flex:1}
+.connect-link-label{font-weight:500;font-size:13px}
+.connect-link-val{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.connect-link-arrow{color:var(--faint);font-size:16px}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:clamp(32px,5vw,48px) 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.footer-tagline{font-size:14px;line-height:1.6;color:var(--muted);max-width:260px;font-weight:300}
+.footer-tagline span{color:var(--red)}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links a{
+  font-family:var(--font-mono);font-size:11px;color:var(--faint);
+  text-decoration:none;letter-spacing:.04em;transition:color .2s;
+}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{
+  border-top:1px solid var(--border);margin-top:32px;padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-family:var(--font-mono);font-size:10px;color:var(--faint);letter-spacing:.06em}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-hamburger{display:block}
+  .build-grid{grid-template-columns:1fr}
+  .arch-grid{grid-template-columns:1fr}
+  .focus-grid{grid-template-columns:1fr}
+  .notes-grid{grid-template-columns:1fr}
+  .open-to-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column}
+}
+
+/* Mobile hero: single column — text FIRST, diagram SECOND */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:76px;
+    padding-bottom:32px;
+    gap:28px;
+  }
+  .hero-text{order:1 !important}
+  .hero-diagram-wrap{order:2 !important}
+}
+
+@media(max-width:600px){
+  .trust-pill{font-size:10px;padding:5px 11px}
+  .section-title{margin-bottom:28px}
+  .timeline-item{padding-left:42px}
+  .hero-sub{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">ankus.dev</span>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#build">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#architectures">Architecture</a>
+      <a href="#notes">Notes</a>
+      <a href="#open">Contact</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <i class="ti ti-sun toggle-icon sun" aria-hidden="true"></i>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      <i class="ti ti-moon toggle-icon moon" aria-hidden="true"></i>
+    </button>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <i class="ti ti-menu-2" id="hamburger-icon" aria-hidden="true"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#build" onclick="closeMenu()">Work</a>
+  <a href="#journey" onclick="closeMenu()">Journey</a>
+  <a href="#architectures" onclick="closeMenu()">Architecture</a>
+  <a href="#notes" onclick="closeMenu()">Notes</a>
+  <a href="#focus" onclick="closeMenu()">Focus</a>
+  <a href="#open" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="page">
+  <div class="hero">
+
+    <!-- LEFT / TOP on mobile: text content -->
+    <div class="hero-text">
+      <div class="hero-label">Data & AI Platform Engineer</div>
+      <h1 class="hero-name">Aditya Kumar</h1>
+      <p class="hero-title">// Building Modern Data & AI Platforms</p>
+      <p class="hero-sub">Designing scalable data pipelines, lakehouse architectures, and AI-powered workflows using Databricks, Spark, Python, SQL, and Cloud technologies.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#architectures"><i class="ti ti-layout-grid" aria-hidden="true"></i> Explore Projects</a>
+        <a class="btn btn-outline" href="#notes"><i class="ti ti-notebook" aria-hidden="true"></i> Architecture Notes</a>
+        <a class="btn btn-outline" href="#"><i class="ti ti-file-cv" aria-hidden="true"></i> Resume</a>
+      </div>
+    </div>
+
+    <!-- RIGHT / BOTTOM on mobile: diagram -->
+    <div class="hero-diagram-wrap">
+      <div class="arch-diagram" id="hero-diagram">
+        <div class="arch-top">
+          <div class="arch-dots">
+            <span class="arch-dot r"></span>
+            <span class="arch-dot y"></span>
+            <span class="arch-dot g"></span>
+          </div>
+          <span>platform_architecture.py</span>
+        </div>
+
+        <svg class="flow-canvas" viewBox="0 0 300 330" xmlns="http://www.w3.org/2000/svg" id="flow-svg">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#FF3621" stroke-width="1.5" stroke-linecap="round"/>
+            </marker>
+            <marker id="ah-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/>
+            </marker>
+            <marker id="ah-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/>
+            </marker>
+          </defs>
+
+          <!-- Raw Data Sources -->
+          <g class="flow-node" id="node-raw" onclick="selectNode('raw')">
+            <rect x="65" y="8" width="170" height="36" rx="7"
+              fill="rgba(255,54,33,0.10)" stroke="rgba(255,54,33,0.45)" stroke-width="1"/>
+            <text x="150" y="30" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11" font-weight="500"
+              id="txt-raw" fill="#FF3621">Raw Data Sources</text>
+          </g>
+          <line class="flow-line" x1="150" y1="44" x2="150" y2="64"
+            stroke="rgba(255,54,33,0.5)" stroke-width="1" marker-end="url(#ah)"/>
+
+          <!-- Data Ingestion — visible border in both themes -->
+          <g class="flow-node" id="node-ingest" onclick="selectNode('ingest')">
+            <rect id="rect-ingest" x="65" y="68" width="170" height="36" rx="7"
+              fill="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <text x="150" y="90" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11"
+              id="txt-ingest">Data Ingestion</text>
+          </g>
+          <line class="flow-line" x1="150" y1="104" x2="150" y2="124"
+            stroke="rgba(255,54,33,0.4)" stroke-width="1" marker-end="url(#ah)"/>
+
+          <!-- Databricks Lakehouse -->
+          <g class="flow-node" id="node-lake" onclick="selectNode('lake')">
+            <rect x="30" y="128" width="240" height="40" rx="7"
+              fill="rgba(255,54,33,0.12)" stroke="rgba(255,54,33,0.55)" stroke-width="1.5"/>
+            <text x="150" y="152" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11" font-weight="500"
+              id="txt-lake" fill="#FF3621">Databricks Lakehouse</text>
+          </g>
+
+          <!-- Branch left -->
+          <path class="flow-line" d="M115 168 L115 192 L80 192 L80 212"
+            stroke="rgba(96,165,250,0.55)" stroke-width="1" fill="none" marker-end="url(#ah-blue)"/>
+          <!-- Branch right -->
+          <path class="flow-line" d="M185 168 L185 192 L220 192 L220 212"
+            stroke="rgba(52,211,153,0.55)" stroke-width="1" fill="none" marker-end="url(#ah-green)"/>
+
+          <!-- Analytics -->
+          <g class="flow-node" id="node-analytics" onclick="selectNode('analytics')">
+            <rect x="22" y="216" width="120" height="36" rx="7"
+              fill="rgba(96,165,250,0.10)" stroke="rgba(96,165,250,0.40)" stroke-width="1"/>
+            <text x="82" y="238" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11"
+              id="txt-analytics" fill="#60A5FA">Analytics</text>
+          </g>
+
+          <!-- AI/ML -->
+          <g class="flow-node" id="node-aiml" onclick="selectNode('aiml')">
+            <rect x="158" y="216" width="120" height="36" rx="7"
+              fill="rgba(52,211,153,0.10)" stroke="rgba(52,211,153,0.40)" stroke-width="1"/>
+            <text x="218" y="238" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11"
+              id="txt-aiml" fill="#34D399">AI / ML</text>
+          </g>
+
+          <!-- Merge lines -->
+          <path class="flow-line" d="M82 252 L82 272 L150 272 L150 290"
+            stroke="rgba(255,54,33,0.35)" stroke-width="1" fill="none" marker-end="url(#ah)"/>
+          <path class="flow-line" d="M218 252 L218 272 L150 272 L150 290"
+            stroke="rgba(255,54,33,0.35)" stroke-width="1" fill="none" marker-end="url(#ah)"/>
+
+          <!-- Business Impact -->
+          <g class="flow-node" id="node-impact" onclick="selectNode('impact')">
+            <rect x="65" y="294" width="170" height="36" rx="7"
+              fill="rgba(255,54,33,0.08)" stroke="rgba(255,54,33,0.40)" stroke-width="1"/>
+            <text x="150" y="316" text-anchor="middle"
+              font-family="JetBrains Mono,monospace" font-size="11" font-weight="500"
+              id="txt-impact" fill="#FF3621">Business Impact</text>
+          </g>
+        </svg>
+
+        <!-- Hover tooltip -->
+        <div class="flow-tooltip" id="flow-tooltip">
+          <div class="tip-title" id="tip-title">select a node</div>
+          <div class="tip-techs" id="tip-techs"></div>
+          <div class="tip-hint" id="tip-hint"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-track">
+    <div class="trust-pill">Databricks</div><div class="trust-pill">Apache Spark</div>
+    <div class="trust-pill">Kafka</div><div class="trust-pill">Airflow</div>
+    <div class="trust-pill">dbt</div><div class="trust-pill">Snowflake</div>
+    <div class="trust-pill">AWS</div><div class="trust-pill">Azure</div>
+    <div class="trust-pill">Docker</div><div class="trust-pill">PostgreSQL</div>
+    <div class="trust-pill">Delta Lake</div><div class="trust-pill">Python</div>
+    <div class="trust-pill">PySpark</div><div class="trust-pill">SQL</div>
+    <div class="trust-pill">MLflow</div><div class="trust-pill">Terraform</div>
+    <div class="trust-pill">Databricks</div><div class="trust-pill">Apache Spark</div>
+    <div class="trust-pill">Kafka</div><div class="trust-pill">Airflow</div>
+    <div class="trust-pill">dbt</div><div class="trust-pill">Snowflake</div>
+    <div class="trust-pill">AWS</div><div class="trust-pill">Azure</div>
+    <div class="trust-pill">Docker</div><div class="trust-pill">PostgreSQL</div>
+    <div class="trust-pill">Delta Lake</div><div class="trust-pill">Python</div>
+    <div class="trust-pill">PySpark</div><div class="trust-pill">SQL</div>
+    <div class="trust-pill">MLflow</div><div class="trust-pill">Terraform</div>
+  </div>
+</div>
+
+<!-- WHAT I BUILD -->
+<section id="build">
+  <div class="page">
+    <div class="section-label">What I Build</div>
+    <h2 class="section-title">Engineering <span>Capabilities</span></h2>
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="build-card-icon"><i class="ti ti-database-cog" aria-hidden="true"></i></div>
+        <h3>Data Engineering</h3>
+        <p>Building robust pipelines that transform raw data into reliable, queryable assets at scale.</p>
+        <div class="build-tags">
+          <span class="tag">Batch ETL</span><span class="tag">Streaming</span>
+          <span class="tag">Orchestration</span><span class="tag">Data Quality</span>
+        </div>
+        <div class="arch-flow">
+          <div class="step"><span>Source</span><span class="arrow">→</span><span>ETL</span><span class="arrow">→</span><span style="color:var(--blue)">Warehouse</span></div>
+        </div>
+      </div>
+      <div class="build-card">
+        <div class="build-card-icon" style="background:var(--blue-dim);color:var(--blue)"><i class="ti ti-chart-histogram" aria-hidden="true"></i></div>
+        <h3>Analytics Platforms</h3>
+        <p>Designing lakehouse-native data models that power business metrics and executive dashboards.</p>
+        <div class="build-tags">
+          <span class="tag">Warehousing</span><span class="tag">Data Modeling</span>
+          <span class="tag">Metrics</span><span class="tag">BI</span>
+        </div>
+        <div class="arch-flow">
+          <div class="step"><span>Lakehouse</span><span class="arrow">→</span><span>Warehouse</span><span class="arrow">→</span><span style="color:var(--blue)">BI</span></div>
+        </div>
+      </div>
+      <div class="build-card">
+        <div class="build-card-icon" style="background:var(--green-dim);color:var(--green)"><i class="ti ti-brain" aria-hidden="true"></i></div>
+        <h3>AI Platforms</h3>
+        <p>Operationalizing machine learning from feature engineering to production model serving.</p>
+        <div class="build-tags">
+          <span class="tag">Feature Pipelines</span><span class="tag">ML Workflows</span>
+          <span class="tag">Model Deploy</span><span class="tag">MLOps</span>
+        </div>
+        <div class="arch-flow">
+          <div class="step"><span>Data</span><span class="arrow">→</span><span>Features</span><span class="arrow">→</span><span>Model</span><span class="arrow">→</span><span style="color:var(--green)">API</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="page">
+    <div class="section-label">Engineering Journey</div>
+    <h2 class="section-title">The <span>Evolution</span></h2>
+    <div class="timeline">
+      <div class="timeline-track"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot done"></div>
+        <div><div class="timeline-year">2023</div><div class="timeline-heading">Python Foundations</div><p class="timeline-desc">Built strong algorithmic thinking and Pythonic programming. OOP, data structures, automation scripting, API consumption.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot done"></div>
+        <div><div class="timeline-year">2024</div><div class="timeline-heading">Machine Learning & AI</div><p class="timeline-desc">Explored supervised and unsupervised learning. Built and evaluated models using scikit-learn, pandas, and NumPy ecosystems.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot done"></div>
+        <div><div class="timeline-year">2025</div><div class="timeline-heading">Cloud Computing & Data Science</div><p class="timeline-desc">Deployed workloads on AWS and Azure. Cloud fundamentals, storage tiers, compute services, and data-at-scale patterns.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div><div class="timeline-year">2026 — Now</div><div class="timeline-heading">Data Engineering & Databricks</div><p class="timeline-desc">Deep-diving into Spark, Delta Lake, and the Databricks lakehouse paradigm. Building production-grade ETL and streaming systems.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot future"></div>
+        <div><div class="timeline-year" style="color:var(--faint)">Future</div><div class="timeline-heading" style="color:var(--faint)">Data & AI Platform Engineering</div><p class="timeline-desc">Converging data engineering, analytics, and AI workloads into unified platforms. Governance, observability, and intelligent systems.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED ARCHITECTURES -->
+<section id="architectures">
+  <div class="page">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title">Architecture <span>Designs</span></h2>
+    <div class="arch-grid">
+
+      <!-- Lakehouse -->
+      <div class="arch-card">
+        <div class="arch-card-header">
+          <div class="arch-card-top">
+            <h3>Lakehouse Architecture</h3>
+            <span class="arch-badge">Production</span>
+          </div>
+          <div class="arch-subtitle">medallion pattern</div>
+        </div>
+        <div class="pipeline">
+          <div class="pipe-row">
+            <div class="pipe-left">
+              <div class="pipe-num bronze">B</div>
+              <div class="pipe-connector live"></div>
+            </div>
+            <div class="pipe-content">
+              <div class="pipe-main">
+                <span class="pipe-name">Bronze — Raw Ingestion</span>
+                <span class="pipe-tech-badge ptb-delta">Delta</span>
+              </div>
+            </div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left">
+              <div class="pipe-num silver">S</div>
+              <div class="pipe-connector live"></div>
+            </div>
+            <div class="pipe-content">
+              <div class="pipe-main">
+                <span class="pipe-name">Silver — Cleansed & Validated</span>
+                <span class="pipe-tech-badge ptb-spark">Spark</span>
+              </div>
+            </div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left">
+              <div class="pipe-num gold">G</div>
+            </div>
+            <div class="pipe-content">
+              <div class="pipe-main">
+                <span class="pipe-name">Gold — Business Ready</span>
+                <span class="pipe-tech-badge ptb-sql">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-Time Analytics -->
+      <div class="arch-card">
+        <div class="arch-card-header">
+          <div class="arch-card-top">
+            <h3>Real-Time Analytics Platform</h3>
+            <span class="arch-badge streaming">Streaming</span>
+          </div>
+          <div class="arch-subtitle">event-driven pipeline</div>
+        </div>
+        <div class="pipeline">
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">01</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Event Stream</span><span class="pipe-tech-badge ptb-kafka">Kafka</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">02</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Stream Processing</span><span class="pipe-tech-badge ptb-spark">Spark</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">03</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Lakehouse Store</span><span class="pipe-tech-badge ptb-databricks">Databricks</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">04</div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Live Dashboard</span><span class="pipe-tech-badge ptb-bi">BI Tool</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Workflow -->
+      <div class="arch-card">
+        <div class="arch-card-header">
+          <div class="arch-card-top">
+            <h3>AI Workflow Platform</h3>
+            <span class="arch-badge aiml">AI/ML</span>
+          </div>
+          <div class="arch-subtitle">ml lifecycle</div>
+        </div>
+        <div class="pipeline">
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">01</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Curated Data</span><span class="pipe-tech-badge ptb-delta">Delta</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">02</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Feature Store</span><span class="pipe-tech-badge ptb-databricks">Databricks</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">03</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Model Training & Registry</span><span class="pipe-tech-badge ptb-mlflow">MLflow</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">04</div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Deployment API</span><span class="pipe-tech-badge ptb-rest">REST</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modern ETL -->
+      <div class="arch-card">
+        <div class="arch-card-header">
+          <div class="arch-card-top">
+            <h3>Modern ETL Platform</h3>
+            <span class="arch-badge etl">ETL</span>
+          </div>
+          <div class="arch-subtitle">batch orchestration</div>
+        </div>
+        <div class="pipeline">
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">01</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Workflow Scheduler</span><span class="pipe-tech-badge ptb-airflow">Airflow</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">02</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Distributed Transform</span><span class="pipe-tech-badge ptb-spark">Spark</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">03</div><div class="pipe-connector live"></div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">ACID Storage</span><span class="pipe-tech-badge ptb-deltalake">Delta Lake</span></div></div>
+          </div>
+          <div class="pipe-row">
+            <div class="pipe-left"><div class="pipe-num">04</div></div>
+            <div class="pipe-content"><div class="pipe-main"><span class="pipe-name">Analytics Layer</span><span class="pipe-tech-badge ptb-sql">SQL</span></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section id="notes" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="page">
+    <div class="section-label">Knowledge Base</div>
+    <h2 class="section-title">Engineering <span>Notes</span></h2>
+    <div class="notes-grid">
+      <div class="note-card"><i class="ti ti-hexagon-letter-d note-icon" aria-hidden="true"></i><div><div class="note-title">Understanding Delta Lake</div><div class="note-meta">ACID · Time Travel · Schema Evolution</div></div></div>
+      <div class="note-card"><i class="ti ti-bolt note-icon" aria-hidden="true"></i><div><div class="note-title">Spark Transformations Explained</div><div class="note-meta">Lazy Evaluation · DAG Optimization</div></div></div>
+      <div class="note-card"><i class="ti ti-messages note-icon" aria-hidden="true"></i><div><div class="note-title">Kafka for Data Engineers</div><div class="note-meta">Topics · Partitions · Consumer Groups</div></div></div>
+      <div class="note-card"><i class="ti ti-topology-star-3 note-icon" aria-hidden="true"></i><div><div class="note-title">Airflow DAG Design Patterns</div><div class="note-meta">Idempotency · Backfill · SLAs</div></div></div>
+      <div class="note-card"><i class="ti ti-table note-icon" aria-hidden="true"></i><div><div class="note-title">Data Modeling Fundamentals</div><div class="note-meta">Star Schema · SCD · Normalization</div></div></div>
+      <div class="note-card"><i class="ti ti-building-factory-2 note-icon" aria-hidden="true"></i><div><div class="note-title">Databricks Lakehouse Architecture</div><div class="note-meta">Unity Catalog · Photon · Serverless</div></div></div>
+      <div class="note-card"><i class="ti ti-clipboard-list note-icon" aria-hidden="true"></i><div><div class="note-title">Data Engineering Interview Notes</div><div class="note-meta">System Design · SQL · Pipeline Questions</div></div></div>
+      <div class="note-card" style="border-style:dashed;border-color:rgba(255,54,33,0.2);cursor:default"><i class="ti ti-plus note-icon" style="color:var(--faint)" aria-hidden="true"></i><div><div class="note-title" style="color:var(--faint)">More coming soon</div><div class="note-meta">Updated regularly</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS -->
+<section id="focus">
+  <div class="page">
+    <div class="section-label">Right Now</div>
+    <h2 class="section-title">Current <span>Focus</span></h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-label"><span class="focus-dot r"></span><span style="color:var(--red)">Building</span></div>
+        <div class="focus-item">Databricks</div><div class="focus-item">Apache Spark</div>
+        <div class="focus-item">Python</div><div class="focus-item">SQL</div>
+        <div class="focus-item">PostgreSQL</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-label"><span class="focus-dot b"></span><span style="color:var(--blue)">Learning</span></div>
+        <div class="focus-item">Kafka</div><div class="focus-item">dbt</div>
+        <div class="focus-item">Snowflake</div><div class="focus-item">Airflow</div>
+        <div class="focus-item">Terraform</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-label"><span class="focus-dot g"></span><span style="color:var(--green)">Exploring</span></div>
+        <div class="focus-item">MLOps</div><div class="focus-item">Data Governance</div>
+        <div class="focus-item">Data Quality</div><div class="focus-item">AI Agents</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section style="padding-top:40px;padding-bottom:80px;border-top:1px solid var(--border)">
+  <div class="page">
+    <div class="section-label">Vision</div>
+    <div class="vision-box">
+      <div class="vision-quote">// mission_statement.txt</div>
+      <p class="vision-text">
+        My goal is to build expertise in <strong>modern Data & AI platforms</strong> that unify data engineering, analytics, machine learning, and deployment.<br><br>
+        I am particularly interested in how platforms like <strong>Databricks</strong> are converging traditional data engineering with AI workloads to create <strong>scalable, intelligent systems</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN TO -->
+<section id="open" style="border-top:1px solid var(--border);padding-top:80px;padding-bottom:80px;">
+  <div class="page">
+    <div class="section-label">Opportunities</div>
+    <h2 class="section-title">Open <span>To</span></h2>
+    <div class="open-to-grid">
+      <div class="open-list">
+        <div class="open-item"><i class="ti ti-database open-icon" aria-hidden="true"></i>Data Engineering Internships</div>
+        <div class="open-item"><i class="ti ti-flame open-icon" aria-hidden="true"></i>Databricks & Spark Projects</div>
+        <div class="open-item"><i class="ti ti-git-pull-request open-icon" aria-hidden="true"></i>Open Source Contributions</div>
+        <div class="open-item"><i class="ti ti-message-dots open-icon" aria-hidden="true"></i>Technical Discussions</div>
+        <div class="open-item"><i class="ti ti-users open-icon" aria-hidden="true"></i>Engineering Collaborations</div>
+      </div>
+      <div class="connect-box">
+        <div class="connect-title">Let's Connect</div>
+        <p class="connect-sub">Whether you're working on a data platform, want to collaborate on an open-source project, or just want to talk shop — reach out.</p>
+        <div class="connect-links">
+          <a class="connect-link" href="https://www.linkedin.com/in/aditya-kr86/" target="_blank" rel="noopener">
+            <div class="connect-link-icon link-li"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div>
+            <div class="connect-link-info">
+              <span class="connect-link-label">LinkedIn</span>
+              <span class="connect-link-val">linkedin.com/in/aditya-kr86</span>
+            </div>
+            <i class="ti ti-arrow-up-right connect-link-arrow" aria-hidden="true"></i>
+          </a>
+          <a class="connect-link" href="https://github.com/aditya-kr86" target="_blank" rel="noopener">
+            <div class="connect-link-icon link-gh"><i class="ti ti-brand-github" aria-hidden="true"></i></div>
+            <div class="connect-link-info">
+              <span class="connect-link-label">GitHub</span>
+              <span class="connect-link-val">github.com/aditya-kr86</span>
+            </div>
+            <i class="ti ti-arrow-up-right connect-link-arrow" aria-hidden="true"></i>
+          </a>
+          <a class="connect-link" href="mailto:hi@ankus.dev" target="_blank" rel="noopener">
+            <div class="connect-link-icon link-em"><i class="ti ti-mail" aria-hidden="true"></i></div>
+            <div class="connect-link-info">
+              <span class="connect-link-label">Email</span>
+              <span class="connect-link-val">hi@ankus.dev</span>
+            </div>
+            <i class="ti ti-arrow-up-right connect-link-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="page">
+    <div class="footer-inner">
+      <div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--red);margin-bottom:14px;letter-spacing:.08em">ADITYA KUMAR</div>
+        <p class="footer-tagline">Engineering <span>Data Systems</span>, Analytics Platforms, and AI Workflows.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">ankus.dev/projects</a>
+        <a href="#">ankus.dev/architectures</a>
+        <a href="#">ankus.dev/notes</a>
+        <a href="#">ankus.dev/resume</a>
+        <a href="#">ankus.dev/now</a>
+        <a href="#">ankus.dev/about</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">BUILT WITH PRECISION — DATA & AI PLATFORM ENGINEER</div>
+      <div class="footer-copy">© 2026 Aditya Kumar</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── NODE DATA ── */
+const nodes={
+  raw:{title:'Raw Data Sources',techs:['S3 / GCS / ADLS','REST APIs','Databases','Files & Streams'],hint:'Multiple source types supported'},
+  ingest:{title:'Data Ingestion',techs:['Kafka','Airflow','Python','Debezium'],hint:'Event-driven & batch ingestion patterns'},
+  lake:{title:'Databricks Lakehouse',techs:['Apache Spark','Delta Lake','Unity Catalog','Photon Engine'],hint:'Unified analytics & AI platform'},
+  analytics:{title:'Analytics',techs:['SQL Warehouse','dbt Models','BI Connectors','Metrics Layer'],hint:'Business intelligence and reporting'},
+  aiml:{title:'AI / ML',techs:['MLflow','Feature Store','Model Serving','AutoML'],hint:'End-to-end ML lifecycle'},
+  impact:{title:'Business Impact',techs:['Dashboards','Alerts','Reports','APIs'],hint:'Data-driven decisions at scale'}
+};
+
+let activeNode=null;
+
+function selectNode(key){
+  const tooltip=document.getElementById('flow-tooltip');
+  const n=nodes[key];
+  if(!n)return;
+  if(activeNode===key){
+    activeNode=null;
+    tooltip.classList.remove('visible');
+    resetNodeStyles();
+    return;
+  }
+  activeNode=key;
+  document.getElementById('tip-title').textContent=n.title;
+  document.getElementById('tip-techs').innerHTML=n.techs.map(t=>`<span class="tip-tech">${t}</span>`).join('');
+  document.getElementById('tip-hint').textContent=n.hint;
+  tooltip.classList.add('visible');
+  highlightNode(key);
+}
+
+function highlightNode(key){
+  resetNodeStyles();
+  const nodeEl=document.getElementById('node-'+key);
+  if(!nodeEl)return;
+  const rect=nodeEl.querySelector('rect');
+  if(rect)rect.setAttribute('stroke-width','2');
+}
+
+function resetNodeStyles(){
+  ['raw','ingest','lake','analytics','aiml','impact'].forEach(k=>{
+    const el=document.getElementById('node-'+k);
+    if(el){const r=el.querySelector('rect');if(r)r.setAttribute('stroke-width',k==='lake'?'1.5':'1')}
+  });
+}
+
+/* ── THEME ── */
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme',theme);
+  const isLight=theme==='light';
+  // Update "Data Ingestion" node stroke for visibility in both modes
+  const ri=document.getElementById('rect-ingest');
+  if(ri){
+    ri.setAttribute('fill', isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.04)');
+    ri.setAttribute('stroke', isLight ? 'rgba(0,0,0,0.22)' : 'rgba(255,255,255,0.22)');
+  }
+  // Update muted text fills
+  const ingestTxt=document.getElementById('txt-ingest');
+  if(ingestTxt)ingestTxt.setAttribute('fill',isLight?'#475569':'#9CA3AF');
+  // Lakehouse text
+  const lakeTxt=document.getElementById('txt-lake');
+  if(lakeTxt)lakeTxt.setAttribute('fill',isLight?'#D42D1E':'#FF3621');
+  const rawTxt=document.getElementById('txt-raw');
+  if(rawTxt)rawTxt.setAttribute('fill',isLight?'#D42D1E':'#FF3621');
+  const impTxt=document.getElementById('txt-impact');
+  if(impTxt)impTxt.setAttribute('fill',isLight?'#D42D1E':'#FF3621');
+  const analyticsTxt=document.getElementById('txt-analytics');
+  if(analyticsTxt)analyticsTxt.setAttribute('fill',isLight?'#1D6FCA':'#60A5FA');
+  const aimlTxt=document.getElementById('txt-aiml');
+  if(aimlTxt)aimlTxt.setAttribute('fill',isLight?'#0F7B57':'#34D399');
+}
+
+function toggleTheme(){
+  const current=document.documentElement.getAttribute('data-theme');
+  const next=current==='dark'?'light':'dark';
+  applyTheme(next);
+}
+
+/* ── MOBILE MENU ── */
+let menuOpen=false;
+function toggleMenu(){
+  menuOpen=!menuOpen;
+  document.getElementById('mobile-menu').classList.toggle('open',menuOpen);
+  document.getElementById('hamburger-icon').className=menuOpen?'ti ti-x':'ti ti-menu-2';
+}
+function closeMenu(){
+  menuOpen=false;
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger-icon').className='ti ti-menu-2';
+}
+
+// Close tooltip on outside click
+document.addEventListener('click',function(e){
+  if(!e.target.closest('#hero-diagram')&&!e.target.closest('.hero-diagram-wrap')){
+    document.getElementById('flow-tooltip').classList.remove('visible');
+    activeNode=null;
+    resetNodeStyles();
+  }
+  if(!e.target.closest('nav')&&menuOpen)closeMenu();
+});
+
+// Init theme visuals on load
+applyTheme('dark');
+</script>
+</body>
 </html>
